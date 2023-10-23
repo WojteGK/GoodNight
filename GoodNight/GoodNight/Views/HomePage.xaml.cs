@@ -13,7 +13,7 @@ namespace GoodNight.Views
             InitializeComponent();
         }
 
-        void Button_Clicked(object sender, EventArgs e)
+        void SetAlarmButton_OnClick(object sender, EventArgs e)
         {
             
         }

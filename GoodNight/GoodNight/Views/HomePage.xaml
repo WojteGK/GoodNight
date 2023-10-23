@@ -39,7 +39,7 @@
                 Grid.Column = "1" 
                 Grid.ColumnSpan="3"               
                 Text ="Ustaw Alarm"
-                Clicked="Button_Clicked"
+                Clicked="SetAlarmButton_OnClick"
                 BorderColor="GhostWhite"
                 BorderWidth="5"
                 CornerRadius="40"
