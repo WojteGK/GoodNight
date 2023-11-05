@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Plugin.LocalNotification;
+using System;
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
@@ -27,6 +28,26 @@ namespace GoodNight.Views
         void SetAlarmButton_OnClick(object sender, EventArgs e)
         {
             timePicker.Focus();
+        }
+        async void Test(object sender, EventArgs e)
+        {
+            if (await LocalNotificationCenter.Current.AreNotificationsEnabled() == false)
+            {
+                await LocalNotificationCenter.Current.RequestNotificationPermission();
+            }
+
+            var notification = new NotificationRequest
+            {
+                NotificationId = 100,
+                Title = "Test",
+                Description = "Test Description",
+                ReturningData = "Dummy data", 
+                Schedule =
+                {
+                     NotifyTime = DateTime.Now.AddSeconds(5) 
+                }
+            };
+            await LocalNotificationCenter.Current.Show(notification);
         }
     }
 }

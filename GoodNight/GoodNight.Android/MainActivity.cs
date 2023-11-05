@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Plugin.LocalNotification;
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
@@ -13,6 +13,9 @@ namespace GoodNight.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            LocalNotificationCenter.MainActivity= this;
+            LocalNotificationCenter.CreateNotificationChannel();
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
