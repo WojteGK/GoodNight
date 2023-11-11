@@ -145,4 +145,7 @@
       <Name>GoodNight</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sound.mp3" />
+  </ItemGroup>
 </Project>

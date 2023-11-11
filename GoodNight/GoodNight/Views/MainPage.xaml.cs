@@ -1,16 +1,17 @@
 ﻿using Plugin.LocalNotification;
 using System;
 using System.ComponentModel;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration.iOSSpecific;
 using Xamarin.Forms.Xaml;
 
 namespace GoodNight.Views
 {
-    public partial class HomePage : ContentPage
+    public partial class MainPage : ContentPage
     {
         TimeSpan selectedTime;
-        public HomePage()
+        public MainPage()
         {           
             InitializeComponent();
 
@@ -45,7 +46,12 @@ namespace GoodNight.Views
                 Schedule =
                 {
                      NotifyTime = DateTime.Now.AddSeconds(5) 
-                }
+                },
+                Android =
+                {
+                    Priority = Plugin.LocalNotification.AndroidOption.AndroidPriority.Max,
+                },
+                Sound = DeviceInfo.Platform == DevicePlatform.Android ? "sound" : "sound.mp3",
             };
             await LocalNotificationCenter.Current.Show(notification);
         }

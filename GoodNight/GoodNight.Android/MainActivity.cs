@@ -15,7 +15,10 @@ namespace GoodNight.Droid
             base.OnCreate(savedInstanceState);
 
             LocalNotificationCenter.MainActivity= this;
-            LocalNotificationCenter.CreateNotificationChannel();
+            LocalNotificationCenter.CreateNotificationChannel(new Plugin.LocalNotification.AndroidOption.NotificationChannelRequest
+            {
+                Sound = Resource.Raw.sound.ToString()
+            });
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
