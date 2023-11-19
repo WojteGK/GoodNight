@@ -132,6 +132,9 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Plugin.LocalNotification">
+      <Version>10.1.8</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2196" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.0" />
   </ItemGroup>
@@ -141,5 +144,8 @@
       <Project>{20DD6BDA-7734-4962-AC1D-0819A8A94927}</Project>
       <Name>GoodNight</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sound.mp3" />
   </ItemGroup>
 </Project>

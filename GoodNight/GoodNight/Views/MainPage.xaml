@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GoodNight.Views.HomePage"
+             x:Class="GoodNight.Views.MainPage"
              xmlns:vm="clr-namespace:GoodNight.ViewModels"
              Title="{Binding Title}">
     
@@ -37,7 +37,7 @@
 
             <TimePicker x:Name="timePicker" IsVisible="False" />
             <Label x:Name="time" Text="00:00" Grid.Row="1" Grid.Column="1"/>
-            
+            <Button Clicked="Test" Grid.Row="1" Grid.Column="0"/>
             <Button Grid.Row= "10" 
                 Grid.Column = "1" 
                 Grid.ColumnSpan="3"               
